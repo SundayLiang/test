@@ -1,19 +1,19 @@
 package lfl.gossip;
 
 public class Node {
-	private double value;
+	private double value2;
 	private double spreadProbability = 1;
 	private boolean isSpreaded = false;
 	private double decreaseProbability;
 	
 	public Node(double value,double decreaseProbability){
-		this.value = value;
+		this.value2 = value;
 		this.decreaseProbability = decreaseProbability;
 	}
 	
 	public void push(Node node){
 		if (!node.getIsSpreaded()) {
-			double newValue = (this.value+node.getValue())/2;
+			double newValue = (this.value2+node.getValue())/2;
 			setValue(newValue);
 			node.setValue(newValue);
 //			System.out.println(getValue());
@@ -29,10 +29,10 @@ public class Node {
 	
 	
 	public double getValue() {
-		return value;
+		return value2;
 	}
 	public void setValue(double value) {
-		this.value = value;
+		this.value2 = value;
 	}
 	public double getSpreadProbability() {
 		return spreadProbability;
